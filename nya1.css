@@ -1,0 +1,111 @@
+@charset "UTF-8";
+/* CSS Document */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    overflow-x: hidden;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f1e7;
+}
+
+.hamburger {
+  display: inline-block;
+  cursor: pointer;
+  padding: 10px;
+  position: absolute;
+  right: 70px; 
+  top: 50px;
+  z-index: 10;
+}
+
+.hamburger div {
+  width: 50px;
+  height: 5px;
+  background-color: #333;
+  margin: 6px 0;
+  transition: 0.4s;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  gap: 20px;
+}
+
+/* Menu items */
+.navbar a {
+  padding: 0px 15px;
+  color: #EE2726;
+  font-size: 20px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.navbar a:hover {
+  text-decoration: underline;
+}
+
+.nav-menu {
+  display: inline-flex;
+  flex-direction: row;
+  position: absolute;
+  top: 100px;
+  right: -100%; /* Position the menu off-screen to the right */
+  width: 60%; 
+  padding: 10px;
+  z-index: 5;
+  gap: 60px;
+  transition: right 1.0s ease-in-out; 
+  transform: translateX 100%;
+}
+
+.nav-menu.active {
+  right: 0; /* Move the menu into view */
+  transform: translateX(0);
+}
+
+.nav-menu a {
+  padding: 10px;
+  color: #333333; 
+  font-size: 20px;
+  text-decoration: none;
+  text-transform: uppercase;
+  
+}
+
+.nav-menu a:hover {
+  text-decoration: Bold;
+color: #EE2726;
+
+}
+
+/* Header Styling */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #f4f1e7;
+}
+
+.logo a {
+    font-size: 50px;
+    font-weight: bold;
+    color: #d10a0a; 
+    text-decoration: none;
+
+}
+
+@media (max-width: 768px) {
+  .navbar {
+	  display: none;}
+	
+	
+}

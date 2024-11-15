@@ -1,0 +1,141 @@
+@charset "UTF-8";
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  overflow-x: hidden;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f1e7;
+}
+
+.hamburger {
+  display: inline-block;
+  cursor: pointer;
+  padding: 10px;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  z-index: 10;
+}
+
+.hamburger div {
+  width: 50px;
+  height: 5px;
+  background-color: #333;
+  margin: 6px 0;
+  transition: 0.4s;
+}
+
+/* Navigation Menu */
+.nav-menu {
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  top: 80px;
+  right: -100%; /* Position the menu off-screen */
+  width: 60%;
+  padding: 20px;
+  z-index: 5;
+  gap: 20px;
+  transition: right 1s ease-in-out;
+}
+
+.nav-menu.active {
+  right: 0; /* Move the menu into view */
+}
+
+.nav-menu a {
+  padding: 10px;
+  color: #333333;
+  font-size: 20px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.nav-menu a:hover {
+  font-weight: bold;
+  color: #EE2726;
+}
+
+/* Header Styling */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #f4f1e7;
+}
+
+.logo a {
+  font-size: 50px;
+  font-weight: bold;
+  color: #d10a0a;
+  text-decoration: none;
+}
+
+/* Image Container */
+.image-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  height: 100vh;
+  z-index: 15;
+}
+
+/* Image Styling */
+.floating-image,
+.floating-image2,
+.floating-image3,
+.floating-image4,
+.floating-image5,
+.floating-image6 {
+  width: 200px; /* Adjust width as needed */
+  animation: float 60s ease-in-out infinite;
+}
+
+.floating-image2 {
+  animation-delay: 1s;
+}
+
+.floating-image3 {
+  animation-delay: 4s;
+}
+
+.floating-image4 {
+  width: 400px;
+  animation-delay: 2s;
+}
+
+.floating-image5 {
+  animation-delay: 5s;
+}
+
+.floating-image6 {
+  width: 300px;
+  animation-delay: 3s;
+}
+
+/* Floating Image Animation */
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-2400px); /* Move up */
+  }
+  100% {
+    transform: translateY(0); /* Move back to the original position */
+  }
+}
+
+/* Class to Pause Animation */
+.paused {
+  animation-play-state: paused;
+}
